@@ -4,7 +4,6 @@ env:
     - PYTHON_VERSION=34
     - PYTHON_VERSION=35
     - PYTHON_VERSION=36
-    - PYTHON_VERSION=37
 
 before_install:
     - mkdir -p $HOME/.nixpkgs
