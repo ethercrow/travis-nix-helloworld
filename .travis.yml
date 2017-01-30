@@ -1,0 +1,7 @@
+language: nix
+env:
+    - PYTHON_PACKAGE=python27
+    - PYTHON_PACKAGE=python34
+    - PYTHON_PACKAGE=python35
+    - PYTHON_PACKAGE=python36
+script: echo $PYTHON_PACKAGE
