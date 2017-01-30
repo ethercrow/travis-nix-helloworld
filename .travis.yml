@@ -16,7 +16,3 @@ before_install:
 script:
     - tox -e py${PYVERSION}-test
     - python --version || python3 --version
-
-cache:
-    directories:
-        - /nix/
