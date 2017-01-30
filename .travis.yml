@@ -4,4 +4,5 @@ env:
     - PYTHON_PACKAGE=python34
     - PYTHON_PACKAGE=python35
     - PYTHON_PACKAGE=python36
+    - PYTHON_PACKAGE=python37
 script: echo $PYTHON_PACKAGE
