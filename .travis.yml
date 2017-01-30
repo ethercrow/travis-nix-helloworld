@@ -14,8 +14,8 @@ before_install:
     - pip3 install --user tox || pip install --user tox
 
 script:
-    - python --version || python3 --version
     - tox -e py${PYVERSION}-test
+    - python --version || python3 --version
 
 cache:
     directories:
