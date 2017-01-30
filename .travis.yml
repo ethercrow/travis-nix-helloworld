@@ -1,4 +1,5 @@
 language: nix
+
 env:
     - PYTHON_VERSION=27
     - PYTHON_VERSION=34
@@ -13,4 +14,9 @@ before_install:
     - pip3 install --user tox || pip install --user tox
 
 script:
+    - python --version || python3 --version
     - tox -e py${PYVERSION}-test
+
+cache:
+    directories:
+        - /nix/
