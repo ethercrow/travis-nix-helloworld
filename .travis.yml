@@ -1,8 +1,17 @@
 language: nix
 env:
-    - PYTHON_PACKAGE=python27
-    - PYTHON_PACKAGE=python34
-    - PYTHON_PACKAGE=python35
-    - PYTHON_PACKAGE=python36
-    - PYTHON_PACKAGE=python37
-script: echo $PYTHON_PACKAGE
+    - PYTHON_VERSION=27
+    - PYTHON_VERSION=34
+    - PYTHON_VERSION=35
+    - PYTHON_VERSION=36
+    - PYTHON_VERSION=37
+
+before_install:
+    - mkdir -p $HOME/.nixpkgs
+    - cp travis.nix $HOME/.nixpkgs/config.nix
+    - nix-env -i all
+    - nix-env -iA nixpkgs.python${PYTHON_VERSION}
+    - pip3 install --user tox || pip install --user tox
+
+script:
+    - tox -e py${PYVERSION}-test
